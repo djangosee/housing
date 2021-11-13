@@ -10,11 +10,11 @@ contador_data = 0
 #for k in codes:
    # data[contador_data] = loadFiles(k)
     #contador_data += 1
-data = loadFiles(codes[0])
+data = loadFiles([codes[1]])
 print(data)
 columnas = data.columns
 keys = ["Any", "Trimestre","Codi_Districte", "Nom_Districte", "Codi_Barri", "Nom_Barri"]
-boolean = False
+#boolean = False
 contador = 0
 for j in keys:
     if j in columnas:
