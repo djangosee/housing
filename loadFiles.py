@@ -6,8 +6,9 @@ import numpy as np
 
 
 def loadFiles( codes ):
-    """Devuelve una lista de dataframes para cada codigo"""
-    codes = ['Est_Mercat_Immobiliari_Lloguer_Mitja_Mensual']
+    """Devuelve una lista de dataframes para solo codigo"""
+
+    #codes = ['Est_Mercat_Immobiliari_Lloguer_Mitja_Mensual']
     parameters = {'rows': '1000'}
     url = 'http://opendata-ajuntament.barcelona.cat/data/api/3/action/package_search'
     response = requests.get(url,params=parameters)
@@ -31,6 +32,6 @@ def loadFiles( codes ):
         tables = []
         for j in range(len(datasets_info)):
             tables.append(pd.read_csv(datasets_info['url'][j]))
-        data.append(pd.concat(tables))
+    data = pd.concat(tables)
 
     return(data)
