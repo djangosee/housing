@@ -8,7 +8,11 @@ import numpy as np
 def loadFiles( codes ):
     """Devuelve una lista de dataframes para solo codigo"""
 
+<<<<<<< HEAD
     #codes = ['Est_Mercat_Immobiliari_Lloguer_Mitja_Mensual']
+=======
+   ## codes = ['Est_Mercat_Immobiliari_Lloguer_Mitja_Mensual']
+>>>>>>> DataBaseConstruction
     parameters = {'rows': '1000'}
     url = 'http://opendata-ajuntament.barcelona.cat/data/api/3/action/package_search'
     response = requests.get(url,params=parameters)
