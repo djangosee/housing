@@ -102,12 +102,6 @@ df_cl["predicted"] = y_predict
 zeroo = df_cl[df_cl["predicted"] == 0]
 oness = df_cl[df_cl["predicted"] == 1]
 
-# Imprime los id de los jugadores del cluster 1 (comentar si no interesa)
-#indices = oness.index.to_list()
-#contador = 0
-#for index in indices:
-#    contador += 1
-#    print(contador, int(index))
 
 ## Número de jugadores en cada cluster
 
