@@ -29,3 +29,12 @@ python3.7 housing.py -m "Est_Mercat_Immobiliari_Lloguer_Mitja_Mensual" Preu
 ```
 
 ### Decarga de datasets automática de OpenDataBcn
+Mediante el script loadFiles.py se leen los ficheros csv de [OpenDataBCN](https://opendata-ajuntament.barcelona.cat/dataset) pasándole como parámetro a la función únicamente la url sin el año. Ya que se consigue que se descarguen y concatenen todos los ficheros con el mismo código, independientemente del año. 
+
+El script datascrapping.py consigue agrupar las todas las tablas de las url de alquiler mensual, número de contratos de alquiler, superficie media de las viviendas y precio de la compraventa agrupadas por año, trimestre, código de distrito, nombre de distrito, código de barrio y nombre de barrio.
+
+El output es la tabla data.csv con estas claves y las variables cuantitativas anteriores.
+
+```
+python3.7 datascrapping.py
+```
