@@ -64,4 +64,3 @@ def plotBcnData(data, variable = 'Preu', time = 'dt_index', bygroup = 'Barri', l
 	folium.LayerControl().add_to(BCN_map)
 	BCN_map.save(file)
 	BCN_map
-
