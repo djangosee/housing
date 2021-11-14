@@ -23,5 +23,5 @@ def openMapExample():
     #plt.hist(x=data['Preu'])
     data['Barri'] =  data.Codi_Barri.apply(str)
     data['Barri'] = data['Barri'].str.zfill(2)
-    plotBcnData(data, variable = 'Preu', time = 'dt_index', bygroup = 'Barri', file = 'plot_HousingPrices.html')
-    webbrowser.open("plot_HousingPrices.html")
+    plotBcnData(data, variable = 'Preu', time = 'dt_index', bygroup = 'Barri', legend_name = 'Housing prices in BCN', file = 'fig/plot_HousingPrices.html')
+    webbrowser.open("fig/plot_HousingPrices.html")
