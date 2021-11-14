@@ -11,7 +11,7 @@ from folium.plugins import TimeSliderChoropleth
 from branca.colormap import linear
 import geopandas
 
-def plotBcnData(data, variable = 'Preu', time = 'dt_index', bygroup = 'Barri', file = 'plot.html'):
+def plotBcnData(data, variable = 'Preu', time = 'dt_index', bygroup = 'Barri', legend_name = 'Housing prices', file = 'plot.html'):
 
 	# plot Bcn data by barri or district
 	# by = 'Barri'
@@ -41,7 +41,12 @@ def plotBcnData(data, variable = 'Preu', time = 'dt_index', bygroup = 'Barri', f
 		geo_group = 'DISTRICTE'
 		feat = 'feature.properties.DISTRICTE'
 	BCN_map = folium.Map(location=[41.39, 2.17], zoom_start=12) # in location we must add the city's coordinates
-
+	folium.TileLayer('Stamen Terrain').add_to(BCN_map)
+	folium.TileLayer('Stamen Toner').add_to(BCN_map)
+	folium.TileLayer('Stamen Water Color').add_to(BCN_map)
+	folium.TileLayer('cartodbpositron').add_to(BCN_map)
+	folium.TileLayer('cartodbdark_matter').add_to(BCN_map)
+	folium.TileLayer('openstreetmap').add_to(BCN_map)
 	g = TimeSliderChoropleth(
 	    BCNGeo.set_index(geo_group).to_json(),
 	    styledict=styledata, 
@@ -49,12 +54,12 @@ def plotBcnData(data, variable = 'Preu', time = 'dt_index', bygroup = 'Barri', f
 	BCN_map.choropleth(
 	    geo_data=BCNGeo,
 	    data=data,
-	    columns=['Barri', 'Preu'],
+	    columns=[bygroup, variable],
 	    key_on=feat,
 	    fill_color= 'YlOrRd',
 	    fill_opacity=0.0,
 	    line_opacity=0.0,
-	    legend_name='BCN housing prices'
+	    legend_name=legend_name
 	)
 	folium.LayerControl().add_to(BCN_map)
 	BCN_map.save(file)
