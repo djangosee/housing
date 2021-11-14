@@ -10,6 +10,7 @@ from loadFiles import *
 import os
 from examples.plotHousingPricesExample import *
 from src.timeseries import *
+from datascrapping import *
 print("Connected!")
 
 def main():
@@ -21,6 +22,7 @@ def main():
     parser.add_argument('code', nargs="?",type=str, help='OpenDataBcn code, example:Est_Mercat_Immobiliari_Lloguer_Mitja_Mensual')
     parser.add_argument('-m','--map', action="store_true", help="Open Bcn map example")
     parser.add_argument('-d','--dataset',action="store_true", help="Create csv file from code dataset")
+    parser.add_argument('-s','--scrapping',action="store_true", help="Merge different datasets from codes")
 
     args = parser.parse_args()
 
@@ -32,5 +34,9 @@ def main():
         df = loadFiles([args.code])
         print("DataSet.csv generated!")
         df.to_csv("DataSet.csv")
+    if args.scrapping:
+        print("Loading datasets...")
+        getScrapping()
+        print("Data.csv generated!")
 
 main()
