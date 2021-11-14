@@ -20,7 +20,10 @@ La primera funcionalidad consiste en la creación de un mapa interactivo usando 
 ```
 python3.7 housing.py -m 
 ```
-El output que genera lo encontramos en el siguiente <a id="raw-url" href="https://raw.githubusercontent.com/djangosee/housing/main/fig/plot_HousingPrices.html">html.</a>.
+El output que genera lo encontramos en el siguiente <a id="raw-url" href="https://raw.githubusercontent.com/djangosee/housing/main/fig/plot_HousingPrices.html">html</a>.
+
+![Mapa distritos de barcelona y el precio medio del alquiler durante los años](https://github.com/djangosee/housing/blob/main/fig/map.png)
+
 
 La idea a futuro sería la posibilidad de introducir el código del dataset y la variable númerica:
 
